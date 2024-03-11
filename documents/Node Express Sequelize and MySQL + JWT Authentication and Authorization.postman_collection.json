@@ -1,0 +1,439 @@
+{
+	"info": {
+		"_postman_id": "9e27972a-7e32-4c91-962f-d42df14ce867",
+		"name": "Node Express Sequelize and MySQL + JWT Authentication and Authorization",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Sign Up",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Access-Control-Allow-Headers",
+						"type": "text",
+						"value": "*",
+						"disabled": true
+					},
+					{
+						"key": "x-access-token",
+						"type": "text",
+						"value": "milan@msp7",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "username",
+							"value": "milanmsp7",
+							"type": "text"
+						},
+						{
+							"key": "email",
+							"value": "milanmsp7@gmail.com",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "123456789",
+							"type": "text"
+						},
+						{
+							"key": "",
+							"value": "",
+							"type": "text",
+							"disabled": true
+						}
+					]
+				},
+				"url": {
+					"raw": "{{host}}/api/auth/signup",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"api",
+						"auth",
+						"signup"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Sign In",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Access-Control-Allow-Headers",
+						"type": "text",
+						"value": "*",
+						"disabled": true
+					},
+					{
+						"key": "x-access-token",
+						"type": "text",
+						"value": "milan@msp7",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "username",
+							"value": "milanmsp7",
+							"type": "text"
+						},
+						{
+							"key": "email",
+							"value": "milanmsp7@gmail.com",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "password",
+							"value": "123456789",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{host}}/api/auth/signin",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"api",
+						"auth",
+						"signin"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Sign In",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Access-Control-Allow-Headers",
+								"type": "text",
+								"value": "*",
+								"disabled": true
+							},
+							{
+								"key": "x-access-token",
+								"type": "text",
+								"value": "milan@msp7",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "username",
+									"value": "milanmsp7",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "milanmsp7@gmail.com",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "password",
+									"value": "123456789",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{host}}/api/auth/signin",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"auth",
+								"signin"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "http://localhost:8081"
+						},
+						{
+							"key": "Vary",
+							"value": "Origin"
+						},
+						{
+							"key": "Access-Control-Allow-Headers",
+							"value": "x-access-token, Origin, Content-Type, Accept"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "324"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"144-Kl2Pm7B16T0dtiMq+gDKaQRmJqs\""
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 11 Mar 2024 14:05:30 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": \"acd5186b-10f1-4a82-a757-7f12b79febf3\",\n    \"username\": \"milanmsp7\",\n    \"email\": \"milanmsp7@gmail.com\",\n    \"roles\": [\n        \"ROLE_USER\"\n    ],\n    \"accessToken\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImFjZDUxODZiLTEwZjEtNGE4Mi1hNzU3LTdmMTJiNzlmZWJmMyIsImlhdCI6MTcxMDE2NTkzMCwiZXhwIjoxNzEwMjUyMzMwfQ.zTG4scy66FVEBiFaZ_lW0lCyCL5uMABLmpa0QGkC1-g\"\n}"
+				}
+			]
+		},
+		{
+			"name": "User List",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{host}}/api/test/all",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"api",
+						"test",
+						"all"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Book List",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{host}}/api/books",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"api",
+						"books"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Book List",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/api/books",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"books"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "http://localhost:8081"
+						},
+						{
+							"key": "Vary",
+							"value": "Origin"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "308"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"134-qyAoSbx9MLoxey+hoSYpyf842BA\""
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 11 Mar 2024 14:10:04 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"id\": 1,\n        \"title\": \"The Secret\",\n        \"author\": \"Milan Pithadiya\",\n        \"published\": true,\n        \"created_at\": \"2024-03-11T14:09:40.000Z\",\n        \"updated_at\": \"2024-03-11T14:09:40.000Z\"\n    },\n    {\n        \"id\": 2,\n        \"title\": \"The Sward\",\n        \"author\": \"Milan Pithadiya\",\n        \"published\": true,\n        \"created_at\": \"2024-03-11T14:09:56.000Z\",\n        \"updated_at\": \"2024-03-11T14:09:56.000Z\"\n    }\n]"
+				}
+			]
+		},
+		{
+			"name": "Create Book",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "title",
+							"value": "The Sward",
+							"type": "text"
+						},
+						{
+							"key": "author",
+							"value": "Milan Pithadiya",
+							"type": "text"
+						},
+						{
+							"key": "published",
+							"value": "true",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{host}}/api/books/",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"api",
+						"books",
+						""
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Create Book",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "title",
+									"value": "The Sward",
+									"type": "text"
+								},
+								{
+									"key": "author",
+									"value": "Milan Pithadiya",
+									"type": "text"
+								},
+								{
+									"key": "published",
+									"value": "true",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{host}}/api/books/",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"books",
+								""
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "http://localhost:8081"
+						},
+						{
+							"key": "Vary",
+							"value": "Origin"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "152"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"98-VvBfaQ/yYhOTc6z+7GO+HU+ePWM\""
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 11 Mar 2024 14:09:56 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": 2,\n    \"title\": \"The Sward\",\n    \"author\": \"Milan Pithadiya\",\n    \"published\": true,\n    \"updated_at\": \"2024-03-11T14:09:56.726Z\",\n    \"created_at\": \"2024-03-11T14:09:56.726Z\"\n}"
+				}
+			]
+		}
+	]
+}
